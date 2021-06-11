@@ -1,0 +1,28 @@
+.movieList {
+    height: 740px;
+    width: 415px;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 1px solid #c0c0c0;
+}
+
+.movieList h1 {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.list {
+    padding: 10px;
+}
+
+.listItem {
+    border-radius: 10px;
+    border: 1px solid #c0c0c0;
+    padding: 15px;
+    font-size: 20px;
+    width: 365px;
+}
+
+.focus {
+    font-weight: bold;
+}

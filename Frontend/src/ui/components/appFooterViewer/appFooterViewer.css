@@ -1,0 +1,38 @@
+.footer {
+    height: 65px;
+    border-top: 1px solid #c0c0c0;
+    padding-bottom: 15px;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a.list {
+    color: #c0c0c0;
+    font-size: 30px;
+    display: inline-block;
+    float: right;
+    padding: 10px 20px;
+    position: relative;
+    font-style: none;
+}
+
+.footer a.feed {
+    color: #c0c0c0;
+    font-size: 30px;
+    display: inline-block;
+    float: left;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.logo img {
+    width: 200px;
+}

@@ -1,0 +1,109 @@
+.moviePage {
+    height: 740px;
+    width: 415px;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 1px solid #c0c0c0;
+}
+
+.movieArea {
+    padding: 10px;
+}
+
+.moviePhoto {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    top: 15px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border: 1px solid #c0c0c0;
+    padding-bottom: 60px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #c0c0c0;
+}
+
+.moviePhoto img {width: 350px; height: 350px;}
+
+.movieName {
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Helvetica', sans-serif;
+    float: left;
+}
+
+.movieName .director {
+    font-weight: 200;
+}
+
+.tinfo {
+    font-family: monospace;
+    color: #c0c0c0;
+    float: right;
+    position: relative;
+    font-size: 24px;
+    padding: 12px;
+}
+
+.userNo {
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    top: 8px;
+    left: 23px;
+    border: 10px solid #f0f0f0;
+}
+
+.userNo .icon {
+    color: #ff695b;
+    font-size: 80px;
+    padding: 10px 10px 0px;
+}
+
+.controlUnion {
+    background-color: #f0f0f0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    left: 12px;
+}
+
+.userYes {
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    left: 2px;
+    border: 10px solid #f0f0f0;
+}
+
+.userYes .icon {
+    color: #5de19c;
+    font-size: 60px;
+    padding: 10px 10px 0px;
+    margin-top: 10px;
+}
+
+.userControls {
+    margin-top: 15px;
+}

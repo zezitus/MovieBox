@@ -1,0 +1,53 @@
+.movieUpload {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.box {
+    height: 736px;
+    width: 414px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    text-align: center;
+}
+
+.box h1 {
+    margin-top: 50px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #c0c0c0;
+    padding: 14px 10px;
+    width: 240px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    background: #2ecc71;
+}
