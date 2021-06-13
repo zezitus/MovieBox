@@ -2,9 +2,9 @@ package br.com.entidades;
 
 import java.util.ArrayList;
 
-public class List {
+public class Lista {
 	
-	private long idList;
+	private long idLista;
 	private Viewer viewer;
 	private ArrayList<Movie> movies;
 	private String listName;
@@ -12,16 +12,16 @@ public class List {
 	private long IdViewer;
 	private long IdMovie;
 	
-	public List () {
-		idList = 0;
+	public Lista () {
+		idLista = 0;
 		viewer = null;
 		movies = null;
 		listName = "";
 		movie = new Movie();
 	}
 
-	public List(long idList, Viewer viewer, ArrayList<Movie> movies, String listName, Movie movie) {
-		this.idList = idList;
+	public Lista(long idList, Viewer viewer, ArrayList<Movie> movies, String listName, Movie movie) {
+		this.idLista = idList;
 		this.viewer = viewer;
 		this.movies = movies;
 		this.listName = listName;
@@ -29,11 +29,11 @@ public class List {
 	}
 
 	public long getIdList() {
-		return idList;
+		return idLista;
 	}
 
 	public void setIdList(long idList) {
-		this.idList = idList;
+		this.idLista = idList;
 	}
 
 	public String getListName() {
@@ -70,7 +70,7 @@ public class List {
 
 	@Override
 	public String toString() {
-		return "List [idList=" + idList + ", viewer=" + viewer + ", movies=" + movies + ", listName=" + listName
+		return "List [idList=" + idLista + ", viewer=" + viewer + ", movies=" + movies + ", listName=" + listName
 				+ ", movie=" + movie + "]";
 	}
 

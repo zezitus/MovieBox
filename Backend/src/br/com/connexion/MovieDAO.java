@@ -47,7 +47,7 @@ public class MovieDAO {
 			ps.setLong(5, movie.getIdDirector());
 			ps.setString(6, movie.getDuration());
 			ps.setDouble(7, movie.getAvaliation());
-			ps.setDouble(8, movie.getRecommendedAge());
+			ps.setString(8, movie.getRecommendedAge());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -59,13 +59,18 @@ public class MovieDAO {
 
     public void edit(Movie movie) {
     	this.conexao.OpenConnection();
-		String sql =  "UPDATE filme SET titulo =?, descricao=?, elenco =?, WHERE id_filme=?";
+		String sql =  "UPDATE filme SET titulo =?, genero_filme=?, elenco =?, descricao=?, id_diretor=?, duration=?, avaliacao=?, idade_recomendada = ? WHERE id_filme=?";
 		try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
 			st.setString(1, movie.getTitle());
-			st.setString(2, movie.getDescription());
-			st.setLong(3, movie.getIdMovie());
-			st.setString(4, movie.getCast());
+			st.setString(2, movie.getGender());
+			st.setString(3, movie.getCast());
+			st.setString(4, movie.getDescription());
+			st.setLong(5, movie.getIdDirector());
+			st.setString(6, movie.getDuration());
+			st.setDouble(7, movie.getAvaliation());
+			st.setString(8, movie.getRecommendedAge());
+			st.setLong(9, movie.getIdDirector());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -75,10 +80,11 @@ public class MovieDAO {
 		}
     }
     
-    public void drop(long id_movie) {
+    public void drop (long id_movie) {
     	
     	this.conexao.OpenConnection();
 		String sql = "DELETE FROM filme WHERE id_filme =?";
+		
 		try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
 			st.setLong(1, id_movie);
@@ -121,7 +127,7 @@ public class MovieDAO {
    	 
    	List <Movie> ListMovie = new ArrayList();
    	
-   	String sql = "SELECT * FROM usuario";
+   	String sql = "SELECT * FROM filme";
 		try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
 			ResultSet rs = st.executeQuery();
@@ -129,14 +135,18 @@ public class MovieDAO {
 				Movie movie = new Movie ();
 				movie.setIdMovie(rs.getLong("id_filme"));
 				movie.setTitle(rs.getString("titulo"));
+				movie.setIdDirector(rs.getLong("id_diretor"));
+				movie.setGender(rs.getString("genero_filme"));
+				ListMovie.add(movie);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
    	
-   	return null;
+   	return ListMovie;
     }
+
     
 
 }

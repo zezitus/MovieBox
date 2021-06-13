@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Viewer extends User {
 
 	private long idViewer;
-	private ArrayList<List> lists;
+	private ArrayList<Lista> lists;
 	private String userName;
     private User user;
     private long IdUser;
@@ -21,7 +21,7 @@ public class Viewer extends User {
 		user = new User();
 	}
 	
-	public Viewer(long idViewer, ArrayList<List> lists, String userName, User user,
+	public Viewer(long idViewer, ArrayList<Lista> lists, String userName, User user,
 			long idUser, String name, String gender, String birthday, String email, String password) {
 		super(idUser, name, gender, birthday, email, password);
 		this.idViewer = idViewer;
@@ -38,11 +38,11 @@ public class Viewer extends User {
 	}
 
 
-	public ArrayList<List> getLists() {
+	public ArrayList<Lista> getLists() {
 		return lists;
 	}
 
-	public void setLists(ArrayList<List> lists) {
+	public void setLists(ArrayList<Lista> lists) {
 		this.lists = lists;
 	}
 	

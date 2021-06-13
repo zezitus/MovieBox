@@ -2,6 +2,7 @@ package br.com.connexion;
 
 import java.sql.PreparedStatement;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -57,6 +58,7 @@ public class UserDAO {
 	}
 	
 	public void drop(long id_usuario) {
+		
 		this.conexao.OpenConnection();
 		String sql = "DELETE FROM usuario WHERE id_usuario =?";
 		
@@ -102,7 +104,7 @@ public class UserDAO {
      public List<User> SearchAll() {
     	 this.conexao.OpenConnection();
     	 
-    	List <User> ListUser = new ArrayList();
+    	List<User> listUser = new ArrayList<User>();
     	
     	String sql = "SELECT * FROM usuario";
 		try {
@@ -117,7 +119,7 @@ public class UserDAO {
 		    	user.setEmail(rs.getString("email"));
 		    	user.setPassword(rs.getString("senha"));
 		    	// adiciona na lista o objeto usuario que foi convertido
-				ListUser.add(user);
+				listUser.add(user);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -125,6 +127,6 @@ public class UserDAO {
 			this.conexao.CloseConnection();
 		}
     	
-		return ListUser;
+		return listUser;
 	}
 }

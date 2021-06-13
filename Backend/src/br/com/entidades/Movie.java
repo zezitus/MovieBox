@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Movie {
 	private long idMovie;
-	private int recommendedAge;
+	private String recommendedAge;
 	private String title;
 	private double avaliation;
 	private String cast;
@@ -17,7 +17,7 @@ public class Movie {
 	
 	public Movie() {
 		idMovie = 0;
-		recommendedAge = 0;
+		recommendedAge = "";
 		title = "";
 		avaliation = 0;
 		cast = null;
@@ -27,7 +27,7 @@ public class Movie {
 		director = null;
 	}
 	
-	public Movie(int idMovie, int recommendedAge, String title, double avaliation, String cast,
+	public Movie(int idMovie, String recommendedAge, String title, double avaliation, String cast,
 			String description, String gender, String duration, Director director) {
 		this.idMovie = idMovie;
 		this.recommendedAge = recommendedAge;
@@ -55,12 +55,12 @@ public class Movie {
 				+ duration + ", director=" + director + "]";
 	}
 
-	public int getRecommendedAge() {
+	public String getRecommendedAge() {
 		return recommendedAge;
 	}
 
-	public void setRecommendedAge(int recommendedAge) {
-		this.recommendedAge = recommendedAge;
+	public void setRecommendedAge(String string) {
+		this.recommendedAge = string;
 	}
 
 	public String getTitle() {

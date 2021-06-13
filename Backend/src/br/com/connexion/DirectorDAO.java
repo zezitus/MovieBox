@@ -94,9 +94,9 @@ public class DirectorDAO {
 	public List<Director> SearchAll() {
 	   	 this.conexao.OpenConnection();
 	   	 
-        List <User> ListUser = new ArrayList();
+        List <Director> ListDirector = new ArrayList();
     	
-    	String sql = "SELECT * FROM usuario";
+    	String sql = "SELECT * FROM diretor";
     	try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
 			ResultSet rs = st.executeQuery();
@@ -104,12 +104,13 @@ public class DirectorDAO {
 				Director director = new Director();
 				director.setIdDirector(rs.getLong("id_diretor"));
 				director.setDirectorName(rs.getString("nome_de_diretor"));
+				ListDirector.add(director);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
-	return null;
+	return ListDirector;
 	}
 }

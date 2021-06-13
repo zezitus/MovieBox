@@ -104,7 +104,7 @@ public class ViewerDAO {
    	 
    	List<Viewer> Listviewer = new ArrayList();
    	
-   	String sql = "SELECT * FROM usuario";	
+   	String sql = "SELECT * FROM viewer";	
 		try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
 			ResultSet rs = st.executeQuery();
@@ -112,6 +112,7 @@ public class ViewerDAO {
 				Viewer viewer = new Viewer();
 				viewer.setIdUser(rs.getLong("id_viewer"));
 				viewer.setUserName(rs.getString("apelido"));
+				Listviewer.add(viewer);
 			}
 		} catch (SQLException e) {
 			
