@@ -83,14 +83,13 @@ public class UserDAO {
 			st.setLong(1, id_user);
 			ResultSet rs = st.executeQuery();
 		    if (rs.next()) {
-		    	//significa que existe uma linha
-		    	// setar cada a coluna do rs em um atributo  do objeto usuario 
 		    	user = new User();
 		    	user.setIdUser(rs.getLong("id_usuario"));
 		    	user.setName(rs.getString("nome"));
 		    	user.setEmail(rs.getString("email"));
 		    	user.setPassword(rs.getString("senha"));
 		    	user.setGender(rs.getString("genero"));
+		    	user.setBirthday(rs.getString("aniver"));
 		    }
 		} catch (SQLException e) {
 			e.printStackTrace();

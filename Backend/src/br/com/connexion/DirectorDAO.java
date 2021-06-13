@@ -71,7 +71,7 @@ public class DirectorDAO {
 			this.conexao.CloseConnection();
 		}
 }
-	public Director searchID(Long id_director) {
+	public Director searchID(long id_director) {
 		this.conexao.OpenConnection();
 		String sql = "SELECT * FROM diretor WHERE id_diretor =? ;";
 		Director director = null;
@@ -83,11 +83,16 @@ public class DirectorDAO {
 		    	director = new Director();
 		    	director.setIdDirector(rs.getLong("id_diretor"));
 		    	director.setDirectorName(rs.getString("nome_de_diretor"));
+		    	UserDAO userDAO = new UserDAO();
+                User user = userDAO.searchID(rs.getLong("id_usuario"));
+                director.setUser(user);
 		    }
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			this.conexao.CloseConnection();
 		}
-		return null;
+		return director;
 	}
 	
 	

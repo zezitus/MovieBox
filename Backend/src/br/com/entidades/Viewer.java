@@ -33,7 +33,7 @@ public class Viewer extends User {
 	
 	@Override
 	public String toString() {
-		return "Viewer [idViewer=" + idViewer + ", lists=" + lists + ", userName=" + userName
+		return "Viewer [idViewer=" + idViewer + ", userName=" + userName
 				+ ", user=" + user + "]";
 	}
 

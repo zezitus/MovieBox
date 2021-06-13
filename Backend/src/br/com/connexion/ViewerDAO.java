@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.entidades.User;
 import br.com.entidades.Viewer;
 
 public class ViewerDAO {
@@ -82,12 +83,15 @@ public class ViewerDAO {
 		  Viewer viewer = null;
 		  try {
 			PreparedStatement  st = conexao.getConexao().prepareStatement(sql);
-			st.setString(0, sql);
+			st.setLong(1, id_viewer);
 			ResultSet rs = st.executeQuery();
 		    if (rs.next()) {
 		    	viewer = new Viewer();
 		    	viewer.setIdViewer(rs.getLong("id_viewer"));
 		    	viewer.setUserName(rs.getString("apelido"));
+		    	UserDAO userDAO = new UserDAO();
+                User user = userDAO.searchID(rs.getLong("id_usuario"));
+                viewer.setUser(user);
 		    }
 		} catch (SQLException e) {
 			e.printStackTrace();

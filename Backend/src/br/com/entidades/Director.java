@@ -70,7 +70,11 @@ public class Director extends User{
 	public void setMovies(Movie movie) {
 		this.movie = movie;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Director [idDirector=" + idDirector + ", directorName=" + directorName
+				+ ", user=" + user + ", IdUser=" + IdUser + "]";
+	}
 		
 }

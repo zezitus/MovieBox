@@ -8,6 +8,7 @@ import java.util.List;
 
 import br.com.entidades.Lista;
 import br.com.entidades.Movie;
+import br.com.entidades.Viewer;
 
 public class ListaDAO {
 	
@@ -37,7 +38,7 @@ public class ListaDAO {
 		try {
 			PreparedStatement  st = conexao.getConexao().prepareCall(sql);
 			st.setString(1, (list).getListName());
-			st.setLong(2, ( list).getIdViewer());
+			st.setLong(2, (list).getIdViewer());
 			st.setLong (3, (list).getIdMovie());
 			st.executeUpdate();
 		} catch (SQLException e) {
@@ -87,16 +88,19 @@ public class ListaDAO {
 		        ((Lista) list).setIdList(rs.getLong("id_lista"));
 		        ((Lista) list).setListName(rs.getString("nome_da_lista"));
 		        MovieDAO movieDAO = new MovieDAO();
-		        Movie movie = (Movie) movieDAO.searchID(rs.getLong("id_filme"));
-		        ((Lista) list).setMovie(movie);
-		    }
+                Movie movie = movieDAO.searchID(rs.getLong("id_filme"));
+                ViewerDAO viewerDAO = new ViewerDAO();
+                Viewer viewer = viewerDAO.searchID(rs.getLong("id_viewer"));
+                list.setViewer(viewer);
+                list.setMovie(movie);
+                }
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}finally {
+            this.conexao.CloseConnection();
+        }
 		
-		
-		return null;
+		return list;
 	}
 	
 	public List<Lista> SearchAll(){

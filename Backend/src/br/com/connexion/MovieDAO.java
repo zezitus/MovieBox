@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
 
+import br.com.entidades.Director;
 import br.com.entidades.Movie;
 import br.com.entidades.User;
 
@@ -109,9 +110,17 @@ public class MovieDAO {
 		    	//significa que existe uma linha
 		    	// setar cada a coluna do rs em um atributo  do objeto usuario 
 		    	movie = new Movie();
-		    	movie.setIdMovie(rs.getLong("id_movie"));
-		    	movie.setTitle(rs.getString("titulo"));
-		    	movie.setDescription(rs.getString("descricao"));
+		    	movie.setIdMovie(rs.getLong("id_filme"));
+                movie.setTitle(rs.getString("titulo"));
+                movie.setGender(rs.getString("genero_filme"));
+                movie.setCast(rs.getString("elenco"));
+                movie.setDescription(rs.getString("descricao"));
+                DirectorDAO directorDAO = new DirectorDAO();
+                Director director = directorDAO.searchID(rs.getLong("id_diretor"));
+                movie.setDirector(director);
+                movie.setDuration(rs.getString("duration"));
+                movie.setAvaliation(rs.getDouble("avaliacao"));
+                movie.setRecommendedAge(rs.getString("idade_recomendada"));
 		    }
 		} catch (SQLException e) {
 			e.printStackTrace();

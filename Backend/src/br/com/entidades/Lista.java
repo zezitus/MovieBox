@@ -70,8 +70,8 @@ public class Lista {
 
 	@Override
 	public String toString() {
-		return "List [idList=" + idLista + ", viewer=" + viewer + ", movies=" + movies + ", listName=" + listName
-				+ ", movie=" + movie + "]";
+		return "Lista [idLista=" + idLista + ", viewer=" + viewer + ", movies=" + movies + ", listName=" + listName
+				+ ", movie=" + movie + ", IdViewer=" + IdViewer + ", IdMovie=" + IdMovie + "]";
 	}
 
 	public long getIdViewer() {
